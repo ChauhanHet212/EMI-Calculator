@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="4dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/emi_month"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="2dp"
+            android:text="Months"
+            android:textColor="@color/black"
+            android:background="#33FFD000"/>
+
+        <TextView
+            android:id="@+id/emi_principal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="2dp"
+            android:text="Principal"
+            android:textColor="@color/black"
+            android:background="#335CB302"/>
+
+        <TextView
+            android:id="@+id/emi_interest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="2dp"
+            android:text="Interest"
+            android:textColor="@color/black"
+            android:background="#33FB8C00"/>
+
+        <TextView
+            android:id="@+id/emi_tpayment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="2dp"
+            android:text="T Payment"
+            android:textColor="@color/black"
+            android:background="#3300ACC1"/>
+
+        <TextView
+            android:id="@+id/emi_balance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="2dp"
+            android:text="Balance"
+            android:textColor="@color/black"
+            android:background="#33FB00B4"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+</LinearLayout>
