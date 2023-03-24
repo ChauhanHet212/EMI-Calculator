@@ -54,10 +54,32 @@ public class MainActivity extends AppCompatActivity {
                         emiRecycler.setAdapter(adapter);
                         emi_layout.setVisibility(View.VISIBLE);
                     } else {
-                        Toast.makeText(MainActivity.this, "Enter Proper Value", Toast.LENGTH_SHORT).show();
+                        if (amount == 0){
+                            pEdt.setError("Amount can't be 0");
+                        }
+                        if (rate == 0){
+                            rEdt.setError("Rate can't be 0");
+                        }
+                        if (month == 0){
+                            nEdt.setError("Tenure can't be 0");
+                        }
+                        if (rate > 20){
+                            rEdt.setError("Maximum rate is 20");
+                        }
+                        if (month > 400){
+                            nEdt.setError("Maximum months is 400");
+                        }
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Enter Value First", Toast.LENGTH_SHORT).show();
+                    if (pEdt.getText().toString().isEmpty()){
+                        pEdt.setError("Enter Amount");
+                    }
+                    if (rEdt.getText().toString().isEmpty()){
+                        rEdt.setError("Enter Rate");
+                    }
+                    if (nEdt.getText().toString().isEmpty()){
+                        nEdt.setError("Enter Tenure");
+                    }
                 }
             }
         });
