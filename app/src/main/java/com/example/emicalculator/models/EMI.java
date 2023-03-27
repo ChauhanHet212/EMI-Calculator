@@ -1,6 +1,8 @@
 package com.example.emicalculator.models;
 
-public class EMI {
+import java.io.Serializable;
+
+public class EMI implements Serializable {
     int month, principal, interest, t_payment, balance;
 
     public EMI(int month, int principal, int interest, int t_payment, int balance) {
