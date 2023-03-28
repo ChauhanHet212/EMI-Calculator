@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +34,10 @@ public class EMIAdapter extends RecyclerView.Adapter<EMIAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull EMIAdapter.ViewHolder holder, int position) {
+
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.fall_down_anim);
+        holder.itemView.startAnimation(animation);
+
         holder.emi_month.setText(String.valueOf(emiList.get(position).getMonth()));
         holder.emi_principal.setText(String.valueOf(emiList.get(position).getPrincipal()));
         holder.emi_interest.setText(String.valueOf(emiList.get(position).getInterest()));

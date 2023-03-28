@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +36,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
+
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.fall_down_anim);
+        holder.itemView.startAnimation(animation);
+
         holder.item_month.setText(String.valueOf(emiList.get(position).getMonth()));
         if (i == 1){
             holder.item_value.setText(String.valueOf(emiList.get(position).getPrincipal()));
