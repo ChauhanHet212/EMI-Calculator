@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     Button calculateBtn, clearBtn;
     RecyclerView emiRecycler;
     LinearLayout emi_layout;
-    List<EMI> emiList;
+    public static List<EMI> emiList = new ArrayList<>();
     EMIAdapter adapter;
 
     @Nullable
@@ -42,6 +42,13 @@ public class HomeFragment extends Fragment {
         clearBtn = view.findViewById(R.id.clearBtn);
         emiRecycler = view.findViewById(R.id.emiRecycler);
         emi_layout = view.findViewById(R.id.emi_layout);
+
+        if (!emiList.isEmpty()){
+            emiRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+            adapter = new EMIAdapter(getContext(), emiList);
+            emiRecycler.setAdapter(adapter);
+            emi_layout.setVisibility(View.VISIBLE);
+        }
 
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +65,6 @@ public class HomeFragment extends Fragment {
                         emiRecycler.setAdapter(adapter);
                         emi_layout.setVisibility(View.VISIBLE);
 
-                        new PrincipalFragment(emiList);
-                        new InterestFragment(emiList);
-                        new PaymentFragment(emiList);
-                        new BalanceFragment(emiList);
                     } else {
                         if (amount == 0){
                             pEdt.setError("Amount can't be 0");

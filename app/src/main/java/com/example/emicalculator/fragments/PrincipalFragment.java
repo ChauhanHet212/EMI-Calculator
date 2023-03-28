@@ -1,5 +1,7 @@
 package com.example.emicalculator.fragments;
 
+import static com.example.emicalculator.fragments.HomeFragment.emiList;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,14 +28,6 @@ public class PrincipalFragment extends Fragment {
     LinearLayout principalLinear;
     RecyclerView principalRecycler;
     RecyclerAdapter adapter;
-    List<EMI> emiList = new ArrayList<>();
-
-    public PrincipalFragment(){
-    }
-
-    public PrincipalFragment(List<EMI> emiList){
-        this.emiList = emiList;
-    }
 
     @Nullable
     @Override
