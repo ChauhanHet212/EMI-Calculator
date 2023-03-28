@@ -19,12 +19,17 @@
             android:id="@+id/item_month"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.9"
+            android:layout_weight="1"
             android:gravity="center"
             android:paddingVertical="8dp"
             android:paddingHorizontal="2dp"
             android:text="Months"
             android:textColor="@color/black"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"/>
 
         <TextView
             android:id="@+id/item_value"
